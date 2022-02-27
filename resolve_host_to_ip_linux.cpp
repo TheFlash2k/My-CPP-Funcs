@@ -1,13 +1,10 @@
-#include <iostream>
 #include <string>
 #include <regex>
-#include <typeinfo>
-#include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
 
 
-void resolveHost(std::string hostname) {
+std::string resolveHost(std::string hostname) {
     struct hostent *he;
     he = gethostbyname (hostname.c_str());
     if (he == NULL) {
